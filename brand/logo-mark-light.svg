@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>The Inner Map light logo mark</title>
+  <path d="M8 38c8-18 20-25 35-19 9 3 13 12 9 21-5 12-23 16-36 8C7 42 7 29 15 20 24 10 42 9 52 17" fill="none" stroke="#dce9e8" stroke-width="2.7" stroke-linecap="round"/>
+  <path d="M17 38c5-10 12-15 22-12 6 2 8 8 5 13-3 7-14 10-21 5-6-4-5-12 1-17" fill="none" stroke="#9fc8ca" stroke-width="2.7" stroke-linecap="round"/>
+  <circle cx="34" cy="35" r="5" fill="#d3e86f" stroke="#0b2529" stroke-width="2"/>
+</svg>

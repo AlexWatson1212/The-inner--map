@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#e8f1f0"/>
+  <ellipse cx="1190" cy="95" rx="230" ry="165" fill="none" stroke="#b8d1d0" stroke-width="2"/>
+  <ellipse cx="1190" cy="95" rx="175" ry="125" fill="none" stroke="#b8d1d0" stroke-width="2"/>
+  <ellipse cx="1190" cy="95" rx="120" ry="85" fill="none" stroke="#b8d1d0" stroke-width="2"/>
+  <g transform="translate(80 75) scale(1.35)">
+    <path d="M8 38c8-18 20-25 35-19 9 3 13 12 9 21-5 12-23 16-36 8C7 42 7 29 15 20 24 10 42 9 52 17" fill="none" stroke="#132f33" stroke-width="2.7" stroke-linecap="round"/>
+    <path d="M17 38c5-10 12-15 22-12 6 2 8 8 5 13-3 7-14 10-21 5-6-4-5-12 1-17" fill="none" stroke="#245f63" stroke-width="2.7" stroke-linecap="round"/>
+    <circle cx="34" cy="35" r="5" fill="#d3e86f" stroke="#132f33" stroke-width="2"/>
+  </g>
+  <text x="176" y="137" fill="#132f33" font-family="Iowan Old Style, Baskerville, Times New Roman, serif" font-size="42">The Inner Map</text>
+  <text x="80" y="306" fill="#132f33" font-family="Iowan Old Style, Baskerville, Times New Roman, serif" font-size="78" letter-spacing="-3">Understand what changes.</text>
+  <text x="80" y="389" fill="#132f33" font-family="Iowan Old Style, Baskerville, Times New Roman, serif" font-size="78" letter-spacing="-3">Build around what helps.</text>
+  <text x="82" y="493" fill="#53696c" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="27">A practical field guide for neurodivergent self-understanding.</text>
+  <circle cx="1082" cy="513" r="16" fill="#d3e86f" stroke="#132f33" stroke-width="4"/>
+</svg>
