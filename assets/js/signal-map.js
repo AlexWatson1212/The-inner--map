@@ -217,6 +217,71 @@
     lines.push('From The Inner Map - theinnermap.co.uk');
 
     output.textContent = lines.join('\n');
+    buildExportPrompt();
+  }
+
+  /* ------------------------------------------- optional prompt for ChatGPT */
+
+  /* Built from this session's answers only, and only assembled in the browser.
+     It leaves the page solely if the person copies or downloads it. */
+  function buildExportPrompt() {
+    var kit = window.TIM && window.TIM.prompt;
+    var target = document.getElementById('export-text');
+    if (!kit || !target) return;
+
+    var conditions = checkedLabels('conditions');
+    var other = valueOf('condition-other');
+    if (other) conditions.push(other);
+
+    var readings = [];
+    if (valueOf('reading-one')) readings.push('- ' + valueOf('reading-one'));
+    if (valueOf('reading-two')) readings.push('- ' + valueOf('reading-two'));
+
+    var blocks = [
+      kit.block('The area I was looking at', labelOf('area')),
+      kit.block('What I observed', valueOf('moment')),
+      kit.block('How available my capacity felt at the time', labelOf('capacity')),
+      kit.block(
+        'Conditions that were present (present, not proven to be the cause)',
+        conditions.map(function (item) { return '- ' + item; })
+      ),
+      kit.block('My best current reading of the effect', labelOf('impact')),
+      kit.block('Possible readings I am holding (working hypotheses, not conclusions)', readings),
+      kit.block('The small, reversible experiment I chose', labelOf('experiment')),
+      kit.block('What I will look for afterwards', valueOf('watch'))
+    ];
+
+    target.textContent = kit.compose({
+      intro: 'I am using a reflective framework for noticing patterns in my own life. Please help ' +
+        'me think with me, not take over.',
+      blocks: blocks,
+      ask: [
+        'Help me hold more than one explanation for this, rather than settling on the first one.',
+        'Point out where I may have turned an observation into a conclusion. Suggest what else could',
+        'have been going on, including ordinary human limits that have nothing to do with how I am',
+        'wired. If it helps, suggest a smaller version of my experiment. Do not tell me what I am,',
+        'and do not offer a diagnosis or an assessment.'
+      ].join('\n')
+    });
+  }
+
+  var exportToggle = document.getElementById('export-toggle');
+  var exportBody = document.getElementById('export-body');
+  if (exportToggle && exportBody) {
+    exportToggle.addEventListener('click', function () {
+      var open = exportBody.hidden;
+      exportBody.hidden = !open;
+      exportToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      exportToggle.textContent = open ? 'Hide the prompt' : 'Show the prompt';
+      if (open) announce('The prompt is shown below. Read it before copying it anywhere.');
+    });
+  }
+
+  if (window.TIM && window.TIM.prompt) {
+    window.TIM.prompt.wire(document.getElementById('export-panel'), {
+      filename: 'my-signal-map-prompt.txt',
+      announce: announce
+    });
   }
 
   /* ------------------------------------------------------ summary actions */

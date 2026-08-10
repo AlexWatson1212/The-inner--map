@@ -25,6 +25,8 @@
   <meta name="twitter:description" content="That page could not be found. Here are the routes that do exist.">
   <meta name="twitter:image" content="https://theinnermap.co.uk/brand/social-share.png">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/brand/icon-180.png">
   <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
@@ -42,7 +44,7 @@
       <span class="visually-hidden">Menu</span>
     </button>
     <nav class="site-nav" id="primary-navigation" aria-label="Main">
-      <div class="site-nav__links"><a href="/start/">Start here</a><a href="/map/">Your map</a><a href="/approach/">The approach</a><a href="/evidence/">Evidence</a><a href="/about/">About</a></div>
+      <div class="site-nav__links"><a href="/start/">Start here</a><a href="/map/">Your map</a><a href="/today/">My day</a><a href="/approach/">The approach</a><a href="/evidence/">Evidence</a><a href="/about/">About</a></div>
       <a class="button button--small button--signal nav-capacity" href="/map/?mode=low">Very little capacity</a>
     </nav>
   </div>
@@ -97,6 +99,7 @@
         <p class="footer-heading">Explore</p>
         <a href="/start/">Start here</a>
         <a href="/map/">Create a first map</a>
+        <a href="/today/">My day</a>
         <a href="/approach/">The approach</a>
       </div>
       <div>
@@ -113,5 +116,6 @@
   </div>
 </footer>
 <script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/register-sw.js" defer></script>
 </body>
 </html>

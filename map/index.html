@@ -24,6 +24,8 @@
   <meta name="twitter:description" content="A private, browser-only reflection tool: record one moment, note the conditions around it, hold more than one possible reading and choose one small experiment.">
   <meta name="twitter:image" content="https://theinnermap.co.uk/brand/social-share.png">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="apple-touch-icon" href="../brand/icon-180.png">
   <link rel="stylesheet" href="../assets/css/site.css">
 </head>
 <body>
@@ -41,7 +43,7 @@
       <span class="visually-hidden">Menu</span>
     </button>
     <nav class="site-nav" id="primary-navigation" aria-label="Main">
-      <div class="site-nav__links"><a href="../start/">Start here</a><a href="../map/" aria-current="page">Your map</a><a href="../approach/">The approach</a><a href="../evidence/">Evidence</a><a href="../about/">About</a></div>
+      <div class="site-nav__links"><a href="../start/">Start here</a><a href="../map/" aria-current="page">Your map</a><a href="../today/">My day</a><a href="../approach/">The approach</a><a href="../evidence/">Evidence</a><a href="../about/">About</a></div>
       <a class="button button--small button--signal nav-capacity" href="../map/?mode=low">Very little capacity</a>
     </nav>
   </div>
@@ -217,6 +219,32 @@
               whether you are autistic, ADHD or AuDHD. It may be useful to take into a conversation
               with a GP, therapist or someone you trust&mdash;as your own notes, nothing more.</p>
           </div>
+
+          <!-- Optional export -->
+          <div class="export-panel export-panel--inset" id="export-panel">
+            <div class="export-panel__head">
+              <div>
+                <p class="mini-label">Optional</p>
+                <h3>Continue this with ChatGPT</h3>
+                <p>This builds a prompt from what you entered on this page. Nothing is sent by this
+                  site&mdash;you would be copying it into another company&rsquo;s product yourself,
+                  under their terms. <strong>Read it first and delete anything you would rather not
+                  share.</strong></p>
+              </div>
+            </div>
+            <button type="button" class="button button--outline" id="export-toggle" aria-expanded="false" aria-controls="export-body">Show the prompt</button>
+            <div id="export-body" hidden>
+              <pre data-export-text id="export-text" tabindex="0" aria-label="Prompt you can copy"></pre>
+              <div class="button-row">
+                <button type="button" class="button button--outline" data-export-copy>Copy prompt</button>
+                <button type="button" class="button button--outline" data-export-download>Download prompt</button>
+              </div>
+              <p class="field-help">An AI assistant is not a therapist, a clinician or a crisis
+                service, and it can be confidently wrong. Treat anything it says as one more possible
+                reading, not an answer. Nothing you paste there is covered by this site&rsquo;s
+                privacy notice.</p>
+            </div>
+          </div>
         </div>
 
         <div class="tool-navigation" id="tool-navigation" hidden>
@@ -338,6 +366,7 @@
         <p class="footer-heading">Explore</p>
         <a href="../start/">Start here</a>
         <a href="../map/">Create a first map</a>
+        <a href="../today/">My day</a>
         <a href="../approach/">The approach</a>
       </div>
       <div>
@@ -354,6 +383,8 @@
   </div>
 </footer>
 <script src="../assets/js/site.js" defer></script>
+<script src="../assets/js/register-sw.js" defer></script>
+<script src="../assets/js/export-prompt.js" defer></script>
 <script src="../assets/js/signal-map.js" defer></script>
 </body>
 </html>

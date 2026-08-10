@@ -345,7 +345,7 @@ p {
 .site-nav :focus-visible,
 .low-route-card :focus-visible,
 .map-summary :focus-visible,
-.low-capacity-strip :focus-visible {
+.front-door :focus-visible {
   outline-color: var(--focus-inverse)
 }
 
@@ -545,62 +545,6 @@ p {
   inset: 0
 }
 
-.hero-map__rings {
-  aspect-ratio: 1;
-  border: 1px solid #c7e3e540;
-  border-radius: 44% 56% 52% 48%/60% 42% 58% 40%;
-  width: 96%;
-  position: absolute;
-  top: 4%;
-  right: -18%;
-  transform: rotate(18deg);
-  box-shadow: 0 0 0 31px #c7e3e50f, 0 0 0 62px #c7e3e50d, 0 0 0 93px #c7e3e50a, 0 0 0 124px #c7e3e508
-}
-
-.map-coordinate {
-  color: #dce8e7;
-  align-items: center;
-  gap: 9px;
-  display: flex;
-  position: absolute
-}
-
-.map-coordinate span {
-  border: 3px solid var(--ink-deep);
-  background: var(--signal);
-  width: 13px;
-  height: 13px;
-  box-shadow: 0 0 0 1px var(--signal);
-  border-radius: 50%;
-  flex: none;
-  position: relative
-}
-
-.map-coordinate p {
-  letter-spacing: .02em;
-  margin: 0;
-  font-size: .78rem
-}
-
-.map-coordinate strong {
-  color: var(--white)
-}
-
-.map-coordinate--one {
-  top: 22%;
-  left: 17%
-}
-
-.map-coordinate--two {
-  top: 44%;
-  right: 12%
-}
-
-.map-coordinate--three {
-  bottom: 25%;
-  left: 30%
-}
-
 .map-caption {
   border-top: 1px solid var(--line-light);
   color: #b9cccb;
@@ -734,34 +678,12 @@ p {
   display: flex
 }
 
-.low-capacity-strip {
-  border-radius: var(--radius-md);
-  color: #d7e3e2;
-  background: var(--ink-deep);
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 18px;
-  margin-top: 20px;
-  padding: 22px 24px;
-  display: grid
-}
-
 .signal-dot {
   background: var(--signal);
   border-radius: 50%;
   width: 11px;
   height: 11px;
   box-shadow: 0 0 0 6px #d3e86f1f
-}
-
-.low-capacity-strip p {
-  margin: 0;
-  font-size: .86rem
-}
-
-.low-capacity-strip .mini-label {
-  color: var(--signal);
-  margin-bottom: 3px
 }
 
 .process-layout {
@@ -1849,6 +1771,7 @@ input::placeholder {
   margin-bottom: 7px
 }
 
+.map-summary__heading h2,
 .map-summary__heading h3 {
   color: var(--white);
   margin: 0;
@@ -2314,18 +2237,6 @@ input::placeholder {
     min-height: 390px
   }
 
-  .map-coordinate--one {
-    left: 10%
-  }
-
-  .map-coordinate--two {
-    right: 6%
-  }
-
-  .map-coordinate--three {
-    left: 18%
-  }
-
   .button-row {
     flex-direction: column;
     align-items: flex-start
@@ -2350,14 +2261,6 @@ input::placeholder {
   .doorway-card,
   .start-route-card {
     min-height: 340px
-  }
-
-  .low-capacity-strip {
-    grid-template-columns: auto 1fr
-  }
-
-  .low-capacity-strip .button {
-    grid-column: 1/-1
   }
 
   .process-list li {
@@ -3138,4 +3041,767 @@ h4 {
 
 .long-copy h3 + .claim-badge {
   margin-top: -4px
+}
+
+/* ==========================================================================
+   Version three
+   Homepage front door, the new hero illustration, and the My day flow.
+   Everything below reuses the tokens in the :root block at the top of this
+   file. No new colours, radii or type families are introduced.
+   ========================================================================== */
+
+/* --- Homepage: the hero illustration -------------------------------------- */
+
+.hero-map__bar {
+  border-bottom: 1px solid var(--line-light);
+  align-items: center;
+  gap: 10px;
+  padding: 18px 24px;
+  display: flex;
+  position: relative;
+  z-index: 1
+}
+
+.hero-map__bar p {
+  color: #cfdedd;
+  letter-spacing: .04em;
+  margin: 0;
+  font-size: .78rem;
+  font-weight: 700
+}
+
+.hero-map__tag {
+  border: 1px solid #c7e3e540;
+  color: #a8c3c2;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  margin-left: auto;
+  padding: 4px 11px;
+  font-size: .62rem;
+  font-weight: 800
+}
+
+.hero-map__field {
+  position: absolute;
+  inset: 62px 22px 76px
+}
+
+.hero-map__links {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0
+}
+
+.hero-node {
+  color: #dce8e7;
+  letter-spacing: .01em;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: .78rem;
+  line-height: 1.3;
+  display: flex;
+  position: absolute;
+  transform: translate(-14px, -50%)
+}
+
+.hero-node__dot {
+  background: var(--signal);
+  box-shadow: 0 0 0 3px var(--ink-deep), 0 0 0 4px #c7e3e559;
+  border-radius: 50%;
+  width: 11px;
+  height: 11px;
+  flex: none
+}
+
+.hero-node--centre {
+  border: 1px solid #c7e3e547;
+  background: #0f3034e0;
+  border-radius: var(--radius-sm);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 12px 18px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.hero-node__label {
+  color: var(--signal);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: .6rem;
+  font-weight: 800
+}
+
+.hero-node--centre strong {
+  color: var(--white);
+  font-family: var(--font-display);
+  letter-spacing: -.03em;
+  font-size: 1.5rem;
+  font-weight: 500
+}
+
+.hero-node--a { top: 27%; left: 24%; max-width: 12em }
+.hero-node--c { top: 77%; left: 38%; max-width: 12em }
+
+/* Anchored from the right so a wrapping label can never run past the panel. */
+.hero-node--b {
+  text-align: right;
+  flex-direction: row-reverse;
+  max-width: 9em;
+  top: 45%;
+  right: 0;
+  transform: translate(6px, -50%)
+}
+
+/* --- Homepage: the low-capacity front door -------------------------------- */
+
+.front-door {
+  background: var(--ink-deep);
+  color: #cadad9
+}
+
+.front-door__grid {
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: clamp(44px, 7vw, 96px);
+  display: grid
+}
+
+.front-door h2 {
+  color: var(--white);
+  max-width: 15ch
+}
+
+.front-door .eyebrow--light {
+  color: var(--signal)
+}
+
+.front-door__lede {
+  max-width: 46ch;
+  margin-bottom: 30px;
+  font-size: clamp(1.05rem, 1.7vw, 1.22rem);
+  line-height: 1.6
+}
+
+.button--wide {
+  padding-inline: 34px
+}
+
+.front-door__note {
+  color: #9db3b2;
+  max-width: 48ch;
+  margin: 24px 0 0;
+  font-size: .84rem
+}
+
+.front-door__list {
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
+
+.front-door__list li {
+  border-bottom: 1px solid var(--line-light);
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+  font-size: 1.02rem;
+  display: flex
+}
+
+.front-door__plus {
+  border: 1px solid #c7e3e547;
+  color: var(--signal);
+  border-radius: 50%;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  font-size: .95rem;
+  font-weight: 700;
+  display: flex
+}
+
+.front-door__support {
+  border-bottom: 0;
+  color: #9db3b2;
+  padding-top: 22px;
+  font-size: .84rem;
+  line-height: 1.6
+}
+
+.front-door__support strong {
+  color: var(--white)
+}
+
+.front-door__support a {
+  color: var(--signal)
+}
+
+/* --- My day: layout ------------------------------------------------------- */
+
+.tool-progress--four {
+  grid-template-columns: repeat(4, 1fr)
+}
+
+.chip-grid--roomy .condition-chip {
+  font-size: .95rem
+}
+
+.condition-chip--none {
+  border-style: dashed
+}
+
+.stop-panel--signal {
+  background: var(--signal-pale);
+  border-color: #0000
+}
+
+.stop-panel--signal .button-row {
+  align-items: center;
+  margin-top: 6px
+}
+
+.resume-banner {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  justify-content: space-between;
+  align-items: center;
+  gap: 26px;
+  margin-bottom: 26px;
+  padding: 22px 26px;
+  display: flex;
+  flex-wrap: wrap
+}
+
+.resume-banner p:last-child {
+  color: var(--muted);
+  max-width: 54ch;
+  margin: 0;
+  font-size: .9rem
+}
+
+/* --- My day: the draft ---------------------------------------------------- */
+
+.day-draft {
+  padding: clamp(34px, 6vw, 72px)
+}
+
+.draft-head {
+  border-bottom: 1px solid var(--line);
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding-bottom: 24px;
+  display: flex
+}
+
+.draft-head .mini-label {
+  margin-bottom: 8px
+}
+
+.draft-head h3 {
+  color: var(--ink);
+  max-width: 22ch;
+  margin: 0;
+  font-size: clamp(1.9rem, 4vw, 2.6rem)
+}
+
+.draft-head > span {
+  border: 1px solid var(--line);
+  color: var(--muted);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  flex: none;
+  padding: 5px 12px;
+  font-size: .62rem;
+  font-weight: 800
+}
+
+.draft-intro {
+  max-width: 68ch;
+  color: var(--muted);
+  margin: 26px 0 30px
+}
+
+.draft-cards {
+  gap: 14px;
+  margin-bottom: 34px;
+  display: grid
+}
+
+.draft-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  padding: 22px 24px
+}
+
+.draft-card--later,
+.draft-card--removed {
+  background: #0000;
+  border-style: dashed
+}
+
+.draft-card__head {
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  display: flex
+}
+
+.draft-card__head .mini-label {
+  margin: 0
+}
+
+.draft-card__tag {
+  border: 1px solid var(--line);
+  color: var(--muted);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: .62rem;
+  font-weight: 800
+}
+
+.draft-card__text {
+  background: var(--white);
+  margin-bottom: 8px;
+  min-height: 62px;
+  overflow: hidden;
+  resize: none
+}
+
+.draft-card__note,
+.draft-card__resting {
+  color: var(--muted);
+  margin: 0 0 14px;
+  font-size: .84rem
+}
+
+.draft-card__actions {
+  flex-wrap: wrap;
+  gap: 8px;
+  display: flex
+}
+
+.draft-card__action {
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  background: var(--white);
+  border-radius: 999px;
+  cursor: pointer;
+  min-height: 44px;
+  padding: 10px 16px;
+  font-size: .8rem;
+  font-weight: 700
+}
+
+.draft-card__action:hover {
+  border-color: var(--ink);
+  color: var(--ink)
+}
+
+.draft-versions {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 30px;
+  display: grid
+}
+
+.draft-version {
+  border-radius: var(--radius-md);
+  background: var(--mist);
+  padding: 24px
+}
+
+.draft-version p:not(.mini-label) {
+  color: var(--ink);
+  margin-bottom: 0;
+  font-size: .95rem
+}
+
+.draft-version .field-help {
+  margin-top: 12px
+}
+
+.draft-version--fallback {
+  background: var(--signal-pale)
+}
+
+.draft-experiment {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 30px;
+  padding: 26px 0
+}
+
+.draft-experiment .option-grid {
+  margin-top: 14px
+}
+
+.draft-actions {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 26px;
+  display: flex
+}
+
+/* --- My day: the optional export ------------------------------------------ */
+
+.export-panel,
+.save-panel {
+  border-top: 1px solid var(--line);
+  padding: clamp(28px, 5vw, 46px) clamp(34px, 6vw, 72px)
+}
+
+.export-panel {
+  background: var(--mist)
+}
+
+.export-panel h3 {
+  margin-bottom: 10px;
+  font-size: 1.55rem
+}
+
+.export-panel__head p:last-child {
+  max-width: 68ch;
+  color: var(--muted);
+  font-size: .92rem
+}
+
+.export-panel pre {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  max-height: 340px;
+  margin: 22px 0 18px;
+  padding: 22px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .84rem;
+  line-height: 1.6;
+  overflow: auto
+}
+
+/* --- My day: saving on this device ---------------------------------------- */
+
+.save-panel__row {
+  justify-content: space-between;
+  align-items: center;
+  gap: 26px;
+  display: flex;
+  flex-wrap: wrap
+}
+
+.save-panel__row p:last-child {
+  max-width: 60ch;
+  color: var(--muted);
+  margin: 0;
+  font-size: .92rem
+}
+
+.switch {
+  border: 1px solid var(--line);
+  background: var(--white);
+  border-radius: 999px;
+  cursor: pointer;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 8px 18px 8px 12px;
+  display: flex
+}
+
+.switch__track {
+  border: 1px solid var(--muted-light);
+  background: var(--mist);
+  border-radius: 999px;
+  width: 46px;
+  height: 26px;
+  padding: 3px;
+  flex: none;
+  display: block;
+  transition: background .18s ease, border-color .18s ease
+}
+
+.switch__thumb {
+  background: var(--muted);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: block;
+  transition: transform .18s ease, background .18s ease
+}
+
+.switch__label {
+  color: var(--ink);
+  font-size: .85rem;
+  font-weight: 750
+}
+
+.switch.is-on .switch__track {
+  background: var(--ink-soft);
+  border-color: var(--ink-soft)
+}
+
+.switch.is-on .switch__thumb {
+  background: var(--signal);
+  transform: translateX(20px)
+}
+
+/* The state must not depend on colour alone. */
+.switch:after {
+  border: 1px solid var(--line);
+  color: var(--muted);
+  content: "Off";
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 3px 9px;
+  font-size: .62rem;
+  font-weight: 800
+}
+
+.switch.is-on:after {
+  border-color: var(--ink-soft);
+  color: var(--ink);
+  content: "On"
+}
+
+.save-state {
+  color: var(--muted);
+  max-width: 68ch;
+  margin: 18px 0 0;
+  font-size: .88rem
+}
+
+.clear-confirm {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--ink-soft);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  margin-top: 18px;
+  padding: 20px 22px
+}
+
+.clear-confirm p {
+  max-width: 62ch;
+  font-size: .92rem
+}
+
+/* --- Reduced motion, print, forced colours -------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .switch__track,
+  .switch__thumb {
+    transition: none
+  }
+}
+
+@media (forced-colors: active) {
+  .switch__thumb,
+  .hero-node__dot,
+  .front-door__plus {
+    forced-color-adjust: none
+  }
+  .draft-card--later,
+  .draft-card--removed {
+    outline: 1px dashed CanvasText
+  }
+}
+
+@media print {
+  .resume-banner,
+  .export-panel,
+  .save-panel,
+  .draft-card__actions,
+  .draft-experiment .option-grid,
+  .draft-actions {
+    display: none
+  }
+  .draft-card__text {
+    border: 0;
+    padding-left: 0
+  }
+}
+
+/* --- Narrower viewports --------------------------------------------------- */
+
+@media (max-width: 1080px) {
+  .front-door__grid {
+    grid-template-columns: 1fr;
+    gap: 44px
+  }
+}
+
+/* Below this width the scattered layout stops being readable, so the same
+   information becomes a plain stack. The rings stay as background texture. */
+@media (max-width: 760px) {
+  .hero-map__field {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 14px;
+    display: flex
+  }
+  .hero-map__connectors {
+    display: none
+  }
+  .hero-node {
+    max-width: 100%;
+    position: static;
+    transform: none
+  }
+  .hero-node--b {
+    text-align: left;
+    flex-direction: row
+  }
+  .hero-node--centre {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 4px
+  }
+}
+
+@media (max-width: 860px) {
+  .hero-map__field {
+    inset: 58px 18px 72px
+  }
+  .hero-node {
+    font-size: .78rem
+  }
+  .draft-versions {
+    grid-template-columns: 1fr
+  }
+  .save-panel__row {
+    align-items: flex-start
+  }
+}
+
+@media (max-width: 620px) {
+  .hero-node--centre {
+    padding: 10px 14px
+  }
+  .hero-node--centre strong {
+    font-size: 1.25rem
+  }
+  .draft-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px
+  }
+  /* Wrapped labels inside a pill read badly, so the small screens get a
+     rectangle with two equal columns instead. */
+  .draft-card__actions {
+    grid-template-columns: repeat(2, 1fr);
+    display: grid
+  }
+  .draft-card__action {
+    border-radius: var(--radius-sm);
+    text-align: center;
+    padding-inline: 8px;
+    font-size: .78rem
+  }
+  .draft-actions .button,
+  .resume-banner .button {
+    width: 100%
+  }
+  .switch {
+    width: 100%
+  }
+}
+
+/* --- The offline page ------------------------------------------------------ */
+
+.offline-saved,
+.offline-empty {
+  margin-top: clamp(44px, 6vw, 72px)
+}
+
+.offline-empty {
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-md);
+  max-width: 62ch;
+  padding: 26px 28px
+}
+
+.offline-empty p:last-child {
+  color: var(--muted);
+  margin-bottom: 0;
+  font-size: .92rem
+}
+
+/* The signal map's export panel sits inside the tool card, not below it. */
+.export-panel--inset {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  margin-top: 34px;
+  padding: clamp(24px, 4vw, 34px)
+}
+
+.legal-copy code {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--mist);
+  padding: 1px 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .88em
+}
+
+/* --- Start here: the My day route ----------------------------------------- */
+
+.day-route > div {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  max-width: 780px;
+  padding: clamp(32px, 5vw, 54px)
+}
+
+.day-route h2 {
+  max-width: 16ch
+}
+
+.day-route p:not(.eyebrow):not(.route-note) {
+  color: var(--muted);
+  max-width: 62ch
+}
+
+.day-route .route-note {
+  margin-bottom: 26px
+}
+
+/* My day's hero carries a lede and a note under the heading; the signal map's
+   does not, so the spacing is added here rather than on .page-hero--tool h1. */
+.page-hero--tool h1 + .hero-lede {
+  margin-top: 26px;
+  max-width: 52ch
+}
+
+.page-hero--tool .quiet-note {
+  max-width: 60ch;
+  margin-top: 20px
+}
+
+.not-found-card--single {
+  grid-template-columns: minmax(0, 720px)
+}
+
+/* On My day the claim note sits above the tool card, not inside prose. */
+.tool-section .claim-note {
+  max-width: 780px;
+  margin: 0 0 26px
 }

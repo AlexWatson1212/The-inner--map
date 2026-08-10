@@ -24,6 +24,8 @@
   <meta name="twitter:description" content="What has been built in, what changed in version two, and what is still known to be missing.">
   <meta name="twitter:image" content="https://theinnermap.co.uk/brand/social-share.png">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="apple-touch-icon" href="../brand/icon-180.png">
   <link rel="stylesheet" href="../assets/css/site.css">
 </head>
 <body>
@@ -41,7 +43,7 @@
       <span class="visually-hidden">Menu</span>
     </button>
     <nav class="site-nav" id="primary-navigation" aria-label="Main">
-      <div class="site-nav__links"><a href="../start/">Start here</a><a href="../map/">Your map</a><a href="../approach/">The approach</a><a href="../evidence/">Evidence</a><a href="../about/">About</a></div>
+      <div class="site-nav__links"><a href="../start/">Start here</a><a href="../map/">Your map</a><a href="../today/">My day</a><a href="../approach/">The approach</a><a href="../evidence/">Evidence</a><a href="../about/">About</a></div>
       <a class="button button--small button--signal nav-capacity" href="../map/?mode=low">Very little capacity</a>
     </nav>
   </div>
@@ -52,7 +54,7 @@
   <div class="shell legal-hero__inner">
     <p class="eyebrow">Accessibility</p>
     <h1>Designed to reduce unnecessary effort.</h1>
-    <p>Last reviewed: 9 August 2026</p>
+    <p>Last reviewed: 10 August 2026</p>
   </div>
 </section>
 
@@ -85,6 +87,25 @@
         site is around 12.5&nbsp;pixels and is used only for short labels; body copy is larger. The
         layout is designed to reflow on mobile and at 200% browser zoom rather than requiring
         two-dimensional scrolling.</p>
+
+      <h2>What changed in version three</h2>
+      <ul class="prose-list">
+        <li>The low-capacity route now has a full section on the homepage rather than only a link in
+          the navigation, so it can be reached without reading past four cards.</li>
+        <li><strong>My day</strong> was written mobile-first: every control is at least
+          44&nbsp;pixels tall, each step asks a small number of questions, and every step has a
+          visible way to stop that keeps what you already have.</li>
+        <li>The saving control is a labelled switch that states &ldquo;On&rdquo; or &ldquo;Off&rdquo;
+          in text as well as by position and colour, and deleting saved content asks for confirmation
+          before it happens.</li>
+        <li>The homepage illustration was rebuilt as text and shapes rather than a picture, so it
+          scales with browser zoom, and it carries a description for assistive technology instead of
+          being hidden.</li>
+        <li>The site can be installed to a home screen and opened offline; the offline page can still
+          show a day saved on that device.</li>
+        <li>Progress in <strong>My day</strong> is announced through a status region and never
+          implies that stopping early is a failure.</li>
+      </ul>
 
       <h2>What changed in version two</h2>
       <ul class="prose-list">
@@ -137,6 +158,7 @@
         <p class="footer-heading">Explore</p>
         <a href="../start/">Start here</a>
         <a href="../map/">Create a first map</a>
+        <a href="../today/">My day</a>
         <a href="../approach/">The approach</a>
       </div>
       <div>
@@ -153,5 +175,6 @@
   </div>
 </footer>
 <script src="../assets/js/site.js" defer></script>
+<script src="../assets/js/register-sw.js" defer></script>
 </body>
 </html>

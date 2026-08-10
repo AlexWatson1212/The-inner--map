@@ -24,6 +24,8 @@
   <meta name="twitter:description" content="Choose one recent moment to map. Six starting points, plus a 30-second version for days with very little capacity.">
   <meta name="twitter:image" content="https://theinnermap.co.uk/brand/social-share.png">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="apple-touch-icon" href="../brand/icon-180.png">
   <link rel="stylesheet" href="../assets/css/site.css">
 </head>
 <body>
@@ -41,7 +43,7 @@
       <span class="visually-hidden">Menu</span>
     </button>
     <nav class="site-nav" id="primary-navigation" aria-label="Main">
-      <div class="site-nav__links"><a href="../start/" aria-current="page">Start here</a><a href="../map/">Your map</a><a href="../approach/">The approach</a><a href="../evidence/">Evidence</a><a href="../about/">About</a></div>
+      <div class="site-nav__links"><a href="../start/" aria-current="page">Start here</a><a href="../map/">Your map</a><a href="../today/">My day</a><a href="../approach/">The approach</a><a href="../evidence/">Evidence</a><a href="../about/">About</a></div>
       <a class="button button--small button--signal nav-capacity" href="../map/?mode=low">Very little capacity</a>
     </nav>
   </div>
@@ -132,6 +134,24 @@
   </div>
 </section>
 
+<section class="section" aria-labelledby="day-route-title">
+  <div class="shell day-route">
+    <div>
+      <p class="eyebrow">A different kind of doorway</p>
+      <h2 id="day-route-title">Looking at today rather than one moment?</h2>
+      <p>The doorways above start from something that already happened. <strong>My day</strong> starts
+        from the day in front of you: what matters, what is already fixed, and the capacity you
+        actually have. It ends with a rough shape you can change or abandon.</p>
+      <p class="route-note">It is optional, it takes about four minutes, and it is not a schedule.
+        On a day with very little room, the 30-second version above is the better door.</p>
+      <div class="link-pair">
+        <a class="button button--primary" href="../today/">Shape a rough day</a>
+        <a class="text-link" href="../map/">Map one moment instead <span aria-hidden="true">&#8594;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section section--mist" aria-labelledby="expect-title">
   <div class="shell expectation-grid">
     <div>
@@ -163,6 +183,7 @@
         <p class="footer-heading">Explore</p>
         <a href="../start/">Start here</a>
         <a href="../map/">Create a first map</a>
+        <a href="../today/">My day</a>
         <a href="../approach/">The approach</a>
       </div>
       <div>
@@ -179,5 +200,6 @@
   </div>
 </footer>
 <script src="../assets/js/site.js" defer></script>
+<script src="../assets/js/register-sw.js" defer></script>
 </body>
 </html>

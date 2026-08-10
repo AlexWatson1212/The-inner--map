@@ -24,6 +24,8 @@
   <meta name="twitter:description" content="Nothing you type into the mapping tool is sent, saved or stored — not in a database, not in a cookie, not in browser storage.">
   <meta name="twitter:image" content="https://theinnermap.co.uk/brand/social-share.png">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="apple-touch-icon" href="../brand/icon-180.png">
   <link rel="stylesheet" href="../assets/css/site.css">
 </head>
 <body>
@@ -41,7 +43,7 @@
       <span class="visually-hidden">Menu</span>
     </button>
     <nav class="site-nav" id="primary-navigation" aria-label="Main">
-      <div class="site-nav__links"><a href="../start/">Start here</a><a href="../map/">Your map</a><a href="../approach/">The approach</a><a href="../evidence/">Evidence</a><a href="../about/">About</a></div>
+      <div class="site-nav__links"><a href="../start/">Start here</a><a href="../map/">Your map</a><a href="../today/">My day</a><a href="../approach/">The approach</a><a href="../evidence/">Evidence</a><a href="../about/">About</a></div>
       <a class="button button--small button--signal nav-capacity" href="../map/?mode=low">Very little capacity</a>
     </nav>
   </div>
@@ -52,7 +54,7 @@
   <div class="shell legal-hero__inner">
     <p class="eyebrow">Privacy</p>
     <h1>Your reflection belongs to you.</h1>
-    <p>Last reviewed: 9 August 2026</p>
+    <p>Last reviewed: 10 August 2026</p>
   </div>
 </section>
 
@@ -60,24 +62,61 @@
   <div class="shell legal-layout">
     <aside>
       <p class="mini-label">In plain language</p>
-      <p>The mapping tool does not send or save what you type. Closing or reloading the tab clears it.
-        Nothing is written to cookies, local storage or session storage.</p>
+      <p>Nothing you write is ever sent anywhere. The First Signal Map holds everything in memory
+        only. My day can keep a draft on your device, but only after you switch that on, and you can
+        delete it in two taps.</p>
     </aside>
     <div class="legal-copy">
       <h2>Reflection content</h2>
-      <p>Text, selections and summaries created in the First Signal Map are processed only in your
-        browser, in memory. They are not submitted to The Inner Map, stored in a database, written to
-        browser storage, or attached to an account. There is no account system. The copy, download and
-        print controls act on your own device.</p>
+      <p>Text, selections and summaries created anywhere on this site are processed only in your
+        browser. They are not submitted to The Inner Map, stored in a database, or attached to an
+        account. There is no account system, and there is no server that could receive them. The copy,
+        download and print controls act on your own device.</p>
       <p>Because anything visible on a screen can be seen by someone with access to that screen, avoid
         entering names, identifying information, or details you would not want another person nearby
         to read. If you use the download control, a plain-text file is created on your device and it
         is then yours to keep or delete.</p>
 
+      <h2>The First Signal Map</h2>
+      <p>The five-minute map and the 30-second version hold everything in memory. Nothing is written
+        to cookies, local storage or session storage, and closing or reloading the tab clears it. This
+        has not changed.</p>
+
+      <h2>My day, and saving on your device</h2>
+      <p>My day works the same way by default: in memory, cleared when the tab closes. It also offers
+        a control called <strong>Keep this on this device</strong>. Until you switch that on, nothing
+        is written to your browser&rsquo;s storage at all.</p>
+      <p>If you switch it on, your draft is written to this browser&rsquo;s local storage, under keys
+        beginning <code>innermap.v3.</code>. That storage sits on your own device. It is not
+        synchronised, not backed up, not readable by this site&rsquo;s host, and not visible to anyone
+        else&mdash;except anyone who can use your device and browser profile. On a shared or borrowed
+        device, leaving saving switched off is the safer choice.</p>
+      <p>You can remove it at any time with <strong>Clear this device&rsquo;s maps</strong> at the
+        bottom of My day, which asks you to confirm first. Switching saving off does the same thing:
+        it deletes what was saved as well as stopping future saving. Clearing your browser&rsquo;s
+        site data removes it too.</p>
+
+      <h2>Installing the site, and offline use</h2>
+      <p>The site can be added to a home screen and opened like an app. Doing that stores a copy of
+        the pages, stylesheet, scripts and icons in your browser&rsquo;s cache so they open without a
+        connection. That cache holds the site&rsquo;s own files only. It never contains anything you
+        have written, and it is removed when you uninstall the site or clear the browser&rsquo;s site
+        data.</p>
+
+      <h2>Continuing with ChatGPT</h2>
+      <p>At the end of a map or a day, there is an optional control that assembles a prompt from what
+        you entered. It is built in your browser and shown on screen. This site does not send it
+        anywhere and has no connection to OpenAI or any other AI provider.</p>
+      <p>If you choose to copy that text into ChatGPT or a similar assistant, you are giving it to a
+        different company, under their terms and their privacy policy, not this one. Read the prompt
+        first and delete anything you would rather not share. An AI assistant is not a therapist, a
+        clinician or a crisis service, and it can be confidently wrong.</p>
+
       <h2>Accounts, analytics and marketing</h2>
       <p>This version has no user accounts, advertising trackers, email capture, marketing pixels,
         embedded video, social widgets or behavioural analytics. It does not set cookies of any kind,
-        essential or otherwise.</p>
+        essential or otherwise. The local storage described above is not used for tracking: it holds
+        one draft you wrote, and nothing that identifies you or follows you between sites.</p>
 
       <h2>Technical information</h2>
       <p>Like most websites, the hosting service may process limited technical information needed to
@@ -92,8 +131,10 @@
         apply once you follow a link to their site.</p>
 
       <h2>Your rights</h2>
-      <p>Because no personal data is collected by this site, there is no personal record to access,
-        correct or delete. If you have a question about the site or about how it is hosted, or you
+      <p>Because no personal data is collected by this site, there is no personal record here to
+        access, correct or delete. Anything saved by My day is held on your device and is under your
+        control: you can read it, change it, export it or delete it yourself at any time, without
+        asking anyone. If you have a question about the site or about how it is hosted, or you
         believe something here is inaccurate, you can raise it and it will be looked at.</p>
 
       <h2>Changes</h2>
@@ -120,6 +161,7 @@
         <p class="footer-heading">Explore</p>
         <a href="../start/">Start here</a>
         <a href="../map/">Create a first map</a>
+        <a href="../today/">My day</a>
         <a href="../approach/">The approach</a>
       </div>
       <div>
@@ -136,5 +178,6 @@
   </div>
 </footer>
 <script src="../assets/js/site.js" defer></script>
+<script src="../assets/js/register-sw.js" defer></script>
 </body>
 </html>
